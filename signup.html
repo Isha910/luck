@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Registration Form</title>
+		<link href="Signup.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=play" rel="stylesheet">
+		<style>
+			#msg
+			{
+				visibility: hidden;
+				min-width: 250px;
+				background-color: skyblue;
+				color: #000;
+				text-align: center;
+				border-radius: 2px;
+				padding: 16px;
+				position: fixed;
+				z-index: 1;
+				right: 30%;
+				top: 30px;
+				font-size: 17px;
+				margin-right: 30px;
+			}
+			#msg.show
+			{
+				visibility: visible;
+				-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+				animation: fadein 0.5s,fadeout 0.5s 2.5s;
+			}
+			@-webkit-keyframes fadein{
+				from{ top:0; opacity: 0; }
+				to{top: 30px; opacity: 1;}
+			}
+			@keyframes fadein{
+				from{ top:0; opacity: 0; }
+				to{top: 30px; opacity: 1;}
+			}
+			@-webkit-keyframes fadeout{
+				from{ top:0; opacity: 0; }
+				to{top: 30px; opacity: 1;}
+			}
+			@-webkit-keyframes fadeout{
+				from{ top:0; opacity: 0; }
+				to{top: 30px; opacity: 1;}
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="register">
+			<form action="#" onclick="validation()">
+				<h2 style="color: #fff">Registration Form</h2>
+				
+				<input type="text" id="fusername" name="fusername" placeholder="First name" required>
+				<p id="first-username-error"></p>
+				
+				<input type="text" id="lusername" name="lusername"  placeholder="Last name" required>
+				<p id="last-username-error"></p>
+			
+
+				<input type="text" id="email" name="email" placeholder="Email address" required>
+				<p id="em-error"></p>
+
+				<input type="password" id="pass" name="pass" placeholder="Passwoord" required><br><br>
+				<p id="pas-error"></p>
+
+				<input type="password" id="conpass" name="conpass" placeholder="Confirm Passwoord" required><br><br>
+				<p id="cpas-error"></p>
+
+				<input type="button" value="Registration" onclick="myfunction()"><br><br>
+				 
+				<div id="msg">Congratulations you registered successfully!!!</div>
+				<script>
+
+					var trueData = false;
+
+					function myfunction()
+					{
+						//var trueData = true;
+
+						//console.log(trueData);
+
+						if (trueData === true) {
+							var x = document.getElementById("msg");
+							x.className ="show"
+						setTimeout(function(){x.className = x.className.replace("show", "");}, 3000);
+						}
+						
+						
+					}
+
+					
+
+					function validation()
+					{
+						var fuser = document.getElementById("fusername").value;
+						var luser = document.getElementById("lusername").value;
+						var emails = document.getElementById("email").value;
+						var password = document.getElementById("pass").value;
+						var confirmpass = document.getElementById("conpass").value;
+
+						if(fuser == ""){
+							document.getElementById("first-username-error").innerHTML =" *please fill the firstusername field";
+							trueData = true;
+							return false;
+						}else{
+							document.getElementById("first-username-error").style.display = 'none';
+						}
+
+						if(luser == ""){
+							document.getElementById("last-username-error").innerHTML =" *please fill the lastusername field";
+							trueData = true;
+							return false;
+						}
+						else{
+							document.getElementById("last-username-error").style.display = 'none';
+						}
+
+						if(emails == ""){
+							document.getElementById("em-error").innerHTML =" *please fill the email field";
+							trueData = true;
+							return false;
+						}
+						else{
+							document.getElementById("em-error").style.display = 'none';
+						}
+						if(password == ""){
+							document.getElementById("pas-error").innerHTML =" *please fill the pass field";
+							trueData === true;
+							return false;
+						}
+						else{
+							document.getElementById("pas-error").style.display = 'none';
+						}
+						if(confirmpass == ""){
+							document.getElementById("cpas-error").innerHTML =" *please fill the confirmpass field";
+							trueData = true;
+							return false;
+						}
+						else{
+							document.getElementById("cpas-error").style.display = 'none';
+						}
+						return true;
+					}
+
+					</script>
+				Already have account?<a href="task.html" style="text-decoration: none; font-family: 'play', sans-serif; color: yellow; ">&nbsp;Log In</a>			
+			</form>
+		</div>
+		
+	</body>
+</html>
