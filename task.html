@@ -3,7 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>Login and Registration Form</title>
-		<link href="login.css" rel="stylesheet" type="text/css"/>
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/src.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=play" rel="stylesheet">
 		<script type="text/javascript">
 			
@@ -13,16 +14,26 @@
 	</head>
 	<body>
 		<div class="signin">
-			<form>
-				<h2 style="color: white">Log In</h2>
-				<input type="text" id="username" placeholder="username" required />
-				<input type="password" id="pass" placeholder="password" required /><br/><br/>
-				<a href="cong.html"><input type="button" value="Log In"></a><br/><br/>
+			<form action="#" onclick="log()" autocomplete="off">
+				<h2 style="color: white; text-align: center;"><img src="images/user_login.png" class="user"></h2>
+				<input class="gap" type="text" id="username" placeholder="username" required />
+				<p id="usern-error" class="errorMsg">*please fill the username field</p>
+
+				<input class="gap" type="password" id="password" placeholder="password" required />
+				<p id="pass-error" class="errorMsg">*please fill the password field</p>
+
+				<input type="button" value="Log In"  class="login_btn"><br><br>
+				<!-- <input type="button" class="reg_btn" value="Log In"><br><br> -->
 				<div id="container">
-					<a href="re.html" style=" margin-right:15px; font-size:13px; font-family: Tahoma, Geneva, sans-serif;">Reset password</a>
-					<a href="f.html" style=" margin-left:15px; font-size:13px; font-family: Tahoma, Geneva, sans-serif;">Forgot password</a>
-				</div><br/><br/><br/><br/><br/><br/>
-				Don't have account?<a href="signup.html" style="font-family: 'play', sans-serif;">&nbsp;Sign Up</a>
+					<a href="re.html" style=" margin-right:100px; font-size:15px; font-family: Tahoma, Geneva, sans-serif;">Reset password</a>
+					<a href="f.html" style=" font-size:15px; font-family: Tahoma, Geneva, sans-serif; margin-left:59px;">Forgot password</a>
+				</div>
+				<p class="center">or</p><br>
+			
+				<button class="button1" style= "margin-right: 27px"> <img src="images/login-image.png" class="image"> <span class="Google"></span></button>
+				<button class="button1"> <img src="images/fac-image.png" class="image" > <span class="Facebook"></span></button><br><br><br>
+
+				<p class="center">Don't have account?<a href="signup.html" style="font-family: 'play', sans-serif; color: white;">&nbsp;Sign Up</a></p>
 					
 			</form>
 		</div>			

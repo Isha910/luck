@@ -3,12 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>Reset password</title>
-		<link href="re.css" rel="stylesheet" type="text/css"/>
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/src.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=play" rel="stylesheet">
 		<style>
 			#msg
 			{
-				visibility: hidden;
+				display:none;
 				min-width: 250px;
 				background-color: skyblue;
 				color: #000;
@@ -24,7 +25,7 @@
 			}
 			#msg.show
 			{
-				visibility: visible;
+				display: block;
 				-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
 				animation: fadein 0.5s,fadeout 0.5s 2.5s;
 			}
@@ -49,25 +50,31 @@
 	</head>
 
 	<body>
-		<div class="reset">
-			<form>
-				<h2 align="center"  style="color: #fff;">Reset password</h2>
+		<div class="signin">
+			<form action="#" onclick="ret()" autocomplete="off">
+				<h2 align="center" style="color: #fff;">Reset your password</h2>
 
-				<input type="password" name="pass" placeholder="Old Passwoord"><br><br>
-				<input type="password" name="pass" placeholder="New Passwoord"><br><br>
-				<input type="password" name="pass" placeholder="Confirm New Passwoord"><br><br>
+				<input class="gap" type="password" id="oldpass" name="oldpass" placeholder="Old Password">
+				<p id="opass-error" class="errorMsg">*please fill the old password field</p>
+
+				<input class="gap" type="password" id="newpass" name="newpass" placeholder="New Password">
+				<p id="npass-error" class="errorMsg">*please fill the new password field</p>
+
+				<input class="gap" type="password" id="conpass" name="conpass" placeholder="Confirm New Password">
+				<p id="cpass-error" class="errorMsg">*please fill the confirm password field</p>
+
 				<input type="button" value="Save" onclick="myfunction()"><br><br>
-				<a href="task.html" style="text-decoration: none ">Go back to Home page</a>
+				<a href="task.html" style="text-decoration: none ">Back to Log In</a>
 				<br><br>
 				<div id="msg">Congratulations your password changed successfully!!!</div>
-				<script>
+				<!-- <script> 
 					function myfunction()
 					{
 						var x = document.getElementById("msg");
 						x.className ="show"
 						setTimeout(function(){x.className = x.className.replace("show", "");}, 3000);
 					}
-				</script>
+				</script>-->
 
 				
 				

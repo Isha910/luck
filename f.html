@@ -3,12 +3,14 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>Forgot password</title>
-		<link href="f.css" rel="stylesheet" type="text/css"/>
+		<!-- <link href="f.css" rel="stylesheet" type="text/css"/> -->
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/src.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=play" rel="stylesheet">
 		<style>
 			#snackbar
 			{
-				visibility: hidden;
+				display: none;
 				min-width: 250px;
 				background-color: skyblue;
 				color: #000;
@@ -24,7 +26,7 @@
 			}
 			#snackbar.show
 			{
-				visibility: visible;
+				display:block;
 				-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
 				animation: fadein 0.5s,fadeout 0.5s 2.5s;
 			}
@@ -49,25 +51,19 @@
 	</head>
 
 	<body>
-		<div class="forgot">
-			<form>
+		<div class="signin">
+			<form action="#" onclick="fog()" autocomplete="off">
 				<h2 align="center"  style="color: #fff;">Forgot password</h2>
-				<h5 style="font-size: 14px; color: yellow;">Enter email here that you used on your account.We send link on your email to reset your password.</h5>
+				<h5 style="font-size: 14px; color: white;">Enter email here that you used on your account.We send link on your email to reset your password.</h5>
 
-				<input type="text" name="username" placeholder="Enter your email"><br><br>
+				<input class="gap" type="text" id="email" name="email" placeholder="Enter your email"><br><br>
+				<p id="emails-error"  class="errorMsg">*please fill the email address</p>
+
 				<input type="button" value="Send" onclick="myfunction()"><br><br>
-				<a href="task.html" style="text-decoration: none ">Go back to Home page</a>
+				<a href="task.html" style="text-decoration: none ">Back to Log In</a>
 				<br><br>
 				<div id="snackbar">Link send on your email successfully</div>
-				<script>
-					function myfunction()
-					{
-						var x = document.getElementById("snackbar");
-						x.className ="show"
-						setTimeout(function(){x.className = x.className.replace("show", "");}, 3000);
-					}
-				</script>
-
+				
 				
 				
 			</form>
